@@ -1,0 +1,14 @@
+if you faced any error it may be one of those 
+
+you didn't install packages yet 
+
+run 
+  pip install django 
+  pip install djangorestframework
+
+
+ start django inside your venv 
+      
+     django-admin startproject project . 
+     project folder will be created inside another folder so , 
+set folder of project in venv folder directly and set manage.py in the venv folder 
