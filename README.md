@@ -1,38 +1,58 @@
-# Tech Services API - Backend Core
+# Tech Services API — Backend Core
 
-An integrated backend system for technical services, designed to provide a secure and fast API to support mobile and web applications. The project focuses on flexible categorization and a high-level authentication system.
+A secure and fast backend API built with Django REST Framework to support mobile and web applications. Built as part of an IBM-affiliated training program.
 
-## 🛠 Technologies Used (Tech Stack)
-- **Framework:** Django & Django REST Framework (DRF) [cite: 3, 5, 9]
-- **Database:** Django ORM [cite: 5]
-- **Security:** SimpleJWT (Token-based Authentication), Password Validation [cite: 7, 9]
-- **Architecture:** Clean Architecture approach [cite: 5]
+---
 
-## Key Features
-- **Integrated Authentication System:** Secure user signup and login with protection against unauthorized access attempts [cite: 7, 9]. - **Content Management:** Intelligent template categorization structure and financial status support (free/paid) [cite: 2, 5].
+## 🛠 Tech Stack
 
-- **API Architecture:** RESTful APIs provide JSON responses, facilitating integration with Flutter applications [cite: 3, 5].
+- **Framework:** Django & Django REST Framework (DRF)
+- **Auth:** SimpleJWT (Token-based Authentication)
+- **Architecture:** Clean Architecture
+- **Database:** SQLite (dev) / PostgreSQL (prod)
 
-- **Data Validation:** Advanced serializers are used to ensure data integrity before saving [cite: 3, 7].
+---
 
-## How the Project Works
-1. Ensure Python is installed and the requirements are met:
+## 🔗 API Endpoints
 
-`pip install -r requirements.txt`
+### Authentication
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/auth/signup/` | Register a new user |
+| POST | `/auth/login/` | Login and receive JWT token |
 
-2. Configure the database and perform migrations:
+### Templates
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/templates/all/` | List all templates |
+| GET | `/templates/category/<category>/` | Filter by category |
+| GET | `/templates/paid/<is_paid>/` | Filter free or paid templates |
 
-`python manage.py makemigrations`
+---
 
-`python manage.py migrate`
+## 🔐 Security
 
-3. Run the local server:
+- JWT authentication via SimpleJWT
+- 401 Unauthorized returned on failed auth attempts
+- Django password validation enforced on signup
 
-`python manage.py runserver`
+---
 
-## Security Measures
-- Implement Django Password Validation standards to ensure password strength [cite: 7]. - Using **JWT (JSON Web Tokens)** to securely manage sessions in distributed systems [cite: 9].
+## 🚀 Installation
 
-- Handling authentication errors by returning `401 Unauthorized` to increase security [cite: 9].
+```bash
+git clone https://github.com/Migoo0-ee/tech-services-
+cd tech-services-
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
 
-- **Abdallah Mohamed (Migo)** - Backend Developer & Security Architect
+---
+
+## 👤 Developer
+
+**Abdallah Mohamed (Migo)** — Backend Developer & Security Researcher
+
+LinkedIn => https://www.linkedin.com/in/abdallah-el-messiri-4a31b1320/
+GitHub => https://github.com/Migoo0-ee
