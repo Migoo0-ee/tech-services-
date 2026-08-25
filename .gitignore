@@ -1,0 +1,20 @@
+# Virtual Environment
+Lib/
+Scripts/
+pyvenv.cfg
+
+# Database
+db.sqlite3
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Personal files
+familerErrors.txt
+frameworkEditions.txt
+
+# Media uploads
+media/
